@@ -10,11 +10,42 @@
 </head>
 <body>
     <h1>Rock-Paper-Scissors</h1>
-    <p>Choose One</p>
-    <button id="piedra"></button>
-    <button id="papel"></button>
-    <button id="tijera"></button>
-    <p id="result"></p>
+    <p id="chooseMode"></p>
+    <div class="buttonsModes">
+        <button class="modes" id="infinitiveMode">Infinitive</button>
+        <button class="modes" id="2of3Mode">2 of 3</button>
+        <button class="modes" id="3of5Mode">3 of 5</button>
+    </div>
+    <div class="play">
+        <div class="ChooseOne">
+            <p>Choose One</p>
+            <div class="buttonsContainer">
+                <button class="thing" id="piedra"></button>
+                <button class="thing" id="papel"></button>
+                <button class="thing" id="tijera"></button>
+            </div>
+            <p id="comment"></p>
+            <p id="result"></p>        
+        </div>
+        <div class="counting">
+            <p>Counting</p>
+            <div class="countingContainer">
+                <div class="countingPC">
+                    <p>PC:</p>
+                    <p id="countingPCid"></p>
+                </div>
+                <p>VS</p>
+                <div class="countingPlayer">
+                    <p>Player:</p>
+                    <p id="countingPlayerid"></p>
+                </div>
+            </div>
+            <p id="mode"></p>
+        </div>
+    </div>
+    <div class="buttonReset">
+        <button id="reset">RESET</button>
+    </div>
 </body>
 <script src="main.js"></script>
 </html>
