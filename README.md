@@ -9,5 +9,4 @@ I also used HTML to build the root and CSS for the styles.
 
 I added three pictures of each option and added styles. All this using good practices.
 
-You can watch it here!  https://juanitoloopez.github.io/Rock-Paper-Scissors.github.io/
-Source
+You can watch it here! https://juanitoloopez.github.io/Rock-Paper-Scissor/
