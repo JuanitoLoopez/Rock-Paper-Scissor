@@ -1,4 +1,4 @@
-# Rock-Paper-Scissors.github.io
+# Rock-Paper-Scissors
 Play Rock-Paper-Scissors
 
 I code a script for a popular game rock-paper-scissors as you know this work with some logic behind it. 
