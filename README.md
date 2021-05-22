@@ -13,4 +13,4 @@ I added three pictures of each option and added styles. All this using good prac
 
 I added media queries to create a responsive experience in this project. 
 
-You can watch it here!
+You can watch it here! https://juanitoloopez.github.io/Rock-Paper-Scissor/
