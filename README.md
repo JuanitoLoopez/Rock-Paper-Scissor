@@ -9,8 +9,8 @@ I added modes for player like Two of Three or Three of Five. And also added a bu
 
 I also used HTML to build the root and CSS for the styles.
 
-I added three pictures of each option and added styles. All this using good practices.
+I added three pictures of each option and added styles. All this using Good Practices.
 
-I added media queries to create a responsive experience in this project.
+I added Media Queries to create a responsive experience in this project.
 
 You can watch it here! https://juanitoloopez.github.io/Rock-Paper-Scissor/
