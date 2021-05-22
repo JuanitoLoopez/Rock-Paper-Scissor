@@ -14,8 +14,7 @@ z.addEventListener("click", elegirTijera);
 
 // La PC elige 
 function pcChoose () {
-    var aleatorio = Math.floor(Math.random() * 2.999999999999999);
-  
+    var aleatorio = Math.floor(Math.random() * 2.999999999999999);  
     switch (aleatorio) {
         case 0:
         pcEleccion = "Rock";
@@ -28,15 +27,6 @@ function pcChoose () {
         default:
         pcEleccion = "Scissors";
     }
-/*    if (aleatorio == 0){
-     pcEleccion = "Rock";
-    }
-    else if (aleatorio == 1){
-        pcEleccion = "Paper";
-    }
-    else if (aleatorio == 2){
-        pcEleccion = "Scissors";
-    } */
 }
 pcChoose();
 

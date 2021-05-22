@@ -112,7 +112,6 @@ div.counting{
     height: 30rem;
     background: rgba(255, 255, 255, 0.205);
     border-radius: 4rem;
-
 }
 div.countingContainer{
     margin-top: 5rem;
@@ -162,4 +161,28 @@ button#reset:hover{
     cursor: pointer;
     color: red;
     background-color: rgb(162, 236, 236);
+}
+
+@media (max-width: 824px) {
+    div.play {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    }
+    div.ChooseOne{
+        margin-bottom: 4rem;
+    }
+}   
+@media (max-width: 460px) {
+    div.play {
+        display: flex;      
+        justify-content: center;
+    }
+    div.ChooseOne {
+        width: 100%;
+    }
+    div.counting {
+        width: 100%;
+    }
 }
