@@ -138,7 +138,7 @@ counting(amountPC, amountPlayer);
 var buttonReset = document.getElementById("reset");
 buttonReset.addEventListener("click", reset); 
 function reset () {
-    document.getElementById("comment").innerHTML = "PLAY AGAIN!"
+    document.getElementById("comment").innerHTML = "PLAY AGAIN!";
     amountPC = 0;
     amountPlayer = 0;
     counting(amountPC, amountPlayer);
