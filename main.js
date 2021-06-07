@@ -47,7 +47,7 @@ function elegirTijera () {
 }
 
 // Se determina quien Gana
-document.getElementById("result").innerHTML = "PLAY NOW!!!"
+document.getElementById("comment").innerHTML = "PLAY NOW!!!"
 function jugar (tuEleccion, pcEleccion) {
     if (tuEleccion == "Rock" && pcEleccion == "Scissors") {
         document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
@@ -138,10 +138,10 @@ counting(amountPC, amountPlayer);
 var buttonReset = document.getElementById("reset");
 buttonReset.addEventListener("click", reset); 
 function reset () {
+    document.getElementById("comment").innerHTML = "PLAY AGAIN!"
     amountPC = 0;
     amountPlayer = 0;
     counting(amountPC, amountPlayer);
-    document.getElementById("comment").innerHTML = "PLAY AGAIN!"
 }
 
 // modes
