@@ -11,4 +11,6 @@ I also used HTML to build the root and CSS for the styles.
 
 I added three pictures of each option and added styles. All this using good practices.
 
+I added Media Queries to create a responsive experience in this project. 
+
 You can watch it here!

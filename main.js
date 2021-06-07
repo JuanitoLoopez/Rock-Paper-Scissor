@@ -47,7 +47,7 @@ function elegirTijera () {
 }
 
 // Se determina quien Gana
-document.getElementById("comment").innerHTML = "PLAY NOW!!!"
+document.getElementById("result").innerHTML = "PLAY NOW!!!"
 function jugar (tuEleccion, pcEleccion) {
     if (tuEleccion == "Rock" && pcEleccion == "Scissors") {
         document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
@@ -141,6 +141,7 @@ function reset () {
     amountPC = 0;
     amountPlayer = 0;
     counting(amountPC, amountPlayer);
+    document.getElementById("comment").innerHTML = "PLAY AGAIN!"
 }
 
 // modes
