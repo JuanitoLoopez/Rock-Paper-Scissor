@@ -12,10 +12,10 @@ x.addEventListener("click", elegirPiedra);
 y.addEventListener("click", elegirPapel);
 z.addEventListener("click", elegirTijera);
 
-// La PC elige 
+// La PC elige su respuesta / The PC choose its election  
 function pcChoose () {
-    var aleatorio = Math.floor(Math.random() * 2.999999999999999);  
-    switch (aleatorio) {
+    var random = Math.floor(Math.random() * 2.999999999999999);  
+    switch (random) {
         case 0:
         pcEleccion = "Rock";
         break;
@@ -46,105 +46,131 @@ function elegirTijera () {
     pcChoose();
 }
 
-// Se determina quien Gana
-document.getElementById("comment").innerHTML = "PLAY NOW!!!"
+// Se determina quien Gana / Who wins is determined
+document.getElementById("result").innerHTML = "PLAY NOW!!!";
 function jugar (tuEleccion, pcEleccion) {
     if (tuEleccion == "Rock" && pcEleccion == "Scissors") {
-        document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU WIN!"
         amountPlayer++;
         counting(amountPC, amountPlayer);
-        if (active2of3Mode === true) {
+        removeText();
+        
+        if (active2of3Mode) {
             if (amountPlayer > 1 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 2 of 3!";
                 reset();
+                removeModeText();
             }
         }
-        if (active3of5Mode === true) {
+        if (active3of5Mode) {
             if (amountPlayer > 2 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 3 of 5!";
                 reset();
+                removeModeText();
             }
         }
     }
     else if (tuEleccion == "Paper" && pcEleccion == "Rock"){
-        document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU WIN!"
         amountPlayer++;
         counting(amountPC, amountPlayer);
-        if (active2of3Mode === true) {
+        removeText();
+        if (active2of3Mode) {
             if (amountPlayer > 1 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 2 of 3!";
                 reset();
+                removeModeText();
             }
         }
-        if (active3of5Mode === true) {
+        if (active3of5Mode) {
             if (amountPlayer > 2 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 3 of 5!";
                 reset();
+                removeModeText();
             }
         }
     }
     else if (tuEleccion == "Scissors" && pcEleccion == "Paper"){
-        document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU WIN!"
         amountPlayer++;
         counting(amountPC, amountPlayer);
-        if (active2of3Mode === true) {
+        removeText();
+        if (active2of3Mode) {
             if (amountPlayer > 1 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 2 of 3!";
                 reset();
+                removeModeText();
             }
         }
-        if (active3of5Mode === true) {
+        if (active3of5Mode) {
             if (amountPlayer > 2 ) {
                 document.getElementById("mode").innerHTML = "YOU WIN 3 of 5!";
                 reset();
+                removeModeText();
             }
         }
     }
     else if (tuEleccion == pcEleccion){
-        document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "TIE!"
+        removeText();
     }
     else {
-        document.getElementById("comment").innerHTML = "The PC choose " + pcEleccion + " and you choose " + tuEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU LOSE!"
         amountPC++;
-        counting(amountPC, amountPlayer);
-        if (active2of3Mode === true) {
+        counting(amountPC, amountPlayer);    
+        removeText();
+        if (active2of3Mode) {
             if (amountPC > 1 ) {
                 document.getElementById("mode").innerHTML = "PC WIN 2 of 3!";
                 reset();
+                removeModeText();
             }
         }
-        if (active3of5Mode === true) {
+        else if (active3of5Mode) {
             if (amountPC > 2 ) {
                 document.getElementById("mode").innerHTML = "PC WIN 3 of 5!";
                 reset();
+                removeModeText();
             }
         }
     }
 }
 
-//Se determina el conteo. 
+// Remueve el texto despues de ganar / Remove the text after win
+function removeText () {
+    setTimeout( function (){
+        document.getElementById("comment").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
+    }, 5000);
+}
+function removeModeText () {
+    setTimeout(function(){
+        document.getElementById("mode").innerHTML = "";
+    }, 3000)
+}
+
+//Se determina el conteo. / The count is determined
 function counting (amountPC, amountPlayer) {
     document.getElementById("countingPCid").innerHTML = amountPC;
     document.getElementById("countingPlayerid").innerHTML = amountPlayer;
 }
 counting(amountPC, amountPlayer);
 
-//Se resetea el conteo.
+//Se resetea el conteo / Reset the count 
 var buttonReset = document.getElementById("reset");
 buttonReset.addEventListener("click", reset); 
 function reset () {
-    document.getElementById("comment").innerHTML = "PLAY AGAIN!"
     amountPC = 0;
     amountPlayer = 0;
     counting(amountPC, amountPlayer);
 }
 
-// modes
+// Modos de Juego 2of3 y 3of5 / Modes Games 2of3 and 3of5
 var infinitive = document.getElementById("infinitiveMode");
 infinitive.addEventListener("click", infinitiveMode);
 var twoOfThree = document.getElementById("2of3Mode");
