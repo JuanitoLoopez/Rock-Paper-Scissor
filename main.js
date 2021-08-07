@@ -1,5 +1,5 @@
 var pcEleccion;
-var tuEleccion;
+var playerEleccion;
 var amountPC = 0;
 var amountPlayer = 0;
 var active2of3Mode = false;
@@ -31,48 +31,26 @@ function pcChoose () {
 pcChoose();
 
 function elegirPiedra () {
-    tuEleccion = "Rock";
-    jugar (tuEleccion, pcEleccion);
+    playerEleccion = "Rock";
+    jugar (playerEleccion, pcEleccion);
     pcChoose();
 }
 function elegirPapel () {
-    tuEleccion = "Paper";
-    jugar (tuEleccion, pcEleccion);
+    playerEleccion = "Paper";
+    jugar (playerEleccion, pcEleccion);
     pcChoose();
 }
 function elegirTijera () {
-    tuEleccion = "Scissors";
-    jugar (tuEleccion, pcEleccion);
+    playerEleccion = "Scissors";
+    jugar (playerEleccion, pcEleccion);
     pcChoose();
 }
 
 // Se determina quien Gana / Who wins is determined
 document.getElementById("result").innerHTML = "PLAY NOW!!!";
-function jugar (tuEleccion, pcEleccion) {
-    if (tuEleccion == "Rock" && pcEleccion == "Scissors") {
-        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
-        document.getElementById("result").innerHTML = "YOU WIN!"
-        amountPlayer++;
-        counting(amountPC, amountPlayer);
-        removeText();
-        
-        if (active2of3Mode) {
-            if (amountPlayer > 1 ) {
-                document.getElementById("mode").innerHTML = "YOU WIN 2 of 3!";
-                reset();
-                removeModeText();
-            }
-        }
-        if (active3of5Mode) {
-            if (amountPlayer > 2 ) {
-                document.getElementById("mode").innerHTML = "YOU WIN 3 of 5!";
-                reset();
-                removeModeText();
-            }
-        }
-    }
-    else if (tuEleccion == "Paper" && pcEleccion == "Rock"){
-        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
+function jugar (playerEleccion, pcEleccion) {
+    if (playerEleccion == "Rock" && pcEleccion == "Scissors") {
+        document.getElementById("comment").innerHTML = "You choose " + playerEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU WIN!"
         amountPlayer++;
         counting(amountPC, amountPlayer);
@@ -92,8 +70,8 @@ function jugar (tuEleccion, pcEleccion) {
             }
         }
     }
-    else if (tuEleccion == "Scissors" && pcEleccion == "Paper"){
-        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
+    else if (playerEleccion == "Paper" && pcEleccion == "Rock"){
+        document.getElementById("comment").innerHTML = "You choose " + playerEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU WIN!"
         amountPlayer++;
         counting(amountPC, amountPlayer);
@@ -113,17 +91,39 @@ function jugar (tuEleccion, pcEleccion) {
             }
         }
     }
-    else if (tuEleccion == pcEleccion){
-        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
+    else if (playerEleccion == "Scissors" && pcEleccion == "Paper"){
+        document.getElementById("comment").innerHTML = "You choose " + playerEleccion + " and PC choose "  + pcEleccion;
+        document.getElementById("result").innerHTML = "YOU WIN!"
+        amountPlayer++;
+        counting(amountPC, amountPlayer);
+        removeText();
+        if (active2of3Mode) {
+            if (amountPlayer > 1 ) {
+                document.getElementById("mode").innerHTML = "YOU WIN 2 of 3!";
+                reset();
+                removeModeText();
+            }
+        }
+        if (active3of5Mode) {
+            if (amountPlayer > 2 ) {
+                document.getElementById("mode").innerHTML = "YOU WIN 3 of 5!";
+                reset();
+                removeModeText();
+            }
+        }
+    }
+    else if (playerEleccion == pcEleccion){
+        document.getElementById("comment").innerHTML = "You choose " + playerEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "TIE!"
         removeText();
     }
     else {
-        document.getElementById("comment").innerHTML = "You choose " + tuEleccion + " and PC choose "  + pcEleccion;
+        document.getElementById("comment").innerHTML = "You choose " + playerEleccion + " and PC choose "  + pcEleccion;
         document.getElementById("result").innerHTML = "YOU LOSE!"
         amountPC++;
         counting(amountPC, amountPlayer);    
         removeText();
+        
         if (active2of3Mode) {
             if (amountPC > 1 ) {
                 document.getElementById("mode").innerHTML = "PC WIN 2 of 3!";
@@ -138,6 +138,7 @@ function jugar (tuEleccion, pcEleccion) {
                 removeModeText();
             }
         }
+
     }
 }
 
