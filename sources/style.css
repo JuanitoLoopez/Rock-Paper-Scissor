@@ -103,6 +103,7 @@ button.thing#tijera:hover {
 P#comment {
   margin-top: 0.8rem;
   font-size: 1.8rem;
+  text-align: center;
 }
 p#result {
   margin-top: 0.8rem;
